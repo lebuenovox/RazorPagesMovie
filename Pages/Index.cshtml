@@ -1,10 +1,75 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home page";    
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Testes razor pages</h1>
+    <p>Link para aprender mais <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.
+    </p>
+
+   
+
+
+    @{
+        var myFilePath = @"C:\MyFolder\";
+    }
+    <p>The path is: @myFilePath</p>
+    <p>teste</p>
+    <p>@DateTime.Now</p>
+    <p>@DateTime.IsLeapYear(2016)</p>
+    <p>Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))</p>
+    @("<span>Hello World</span>")
+
+    @* variável pode passar de um bloco para outro *@
+    @{
+        var quote = "The future depends on what you do today. - Mahatma Gandhi";
+    }
+
+    <p>@quote</p>
+
+    @{
+        quote = "Hate cannot drive out hate, only love can do that. - Martin Luther King, Jr.";
+    }
+
+    <p>@quote</p>
+
+    @* funções locais com uma marcação para servir como métodos de modelagem: *@
+    @{
+        void RenderName(string name)
+        {
+            <p>Name: <strong>@name</strong></p>
+        }
+
+        RenderName("Mahatma Gandhi");
+        RenderName("Martin Luther King, Jr.");
+
+    }
+
+    @* Transições implícitas - O idioma padrão em um bloco de código é C#,
+        mas a Página pode fazer a Razor transição de volta para HTML: *@
+    @{
+        var inCSharp = true;
+        <p>Transições implícitas </p>
+        <p>Now in HTML, was in C# @inCSharp</p>
+    }
+
+    @* Transição delimitada explícita *@
+    @for (var i = 0; i < 5; i++)
+    {
+        var person = "pessoa: " + i;
+        <text>Name: @person</text>
+        <br>
+    }
+
 </div>
+
+@if (ViewData["Message"] != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert('@ViewData["Message"]');
+        };
+    </script>
+}

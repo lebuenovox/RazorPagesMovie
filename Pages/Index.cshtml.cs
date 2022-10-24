@@ -17,7 +17,17 @@ namespace RazorPagesMovie.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public PageResult OnGet()
+        {
+            return Page();
+        }
+
+        public void OnPostSave()
+        {
+            ViewData["Message"] = "You clicked Save!";
+        }
+
+        public void Person(int valor)
         {
 
         }
