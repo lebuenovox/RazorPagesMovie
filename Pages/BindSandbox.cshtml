@@ -1,0 +1,50 @@
+﻿@page
+@model RazorPagesMovie.Pages.BindSandboxModel
+@{
+    ViewData["Title"] = "Sandbox";
+}
+
+<h1>Details</h1>
+<form method="post">
+    <div>
+        <h4>Movie</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.ReleaseDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.ReleaseDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Genre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Genre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movie.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Price)
+            </dd>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movie.Rating)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <button id="btnStep1" type="submit" asp-page-handler="Validar" class="btn btn-primary">
+            Validar
+        </button>
+        <button id="btnStep2" type="submit" asp-page-handler="Logar" class="btn btn-primary">
+            Logar
+        </button>
+    </div>
+</form>
