@@ -25,9 +25,15 @@ namespace RazorPagesMovie.Pages
            return Page();
         }
 
+        public PageResult OnPost()
+        {
+            return Page();
+        }
+
         public void OnPostSave()
         {
             ViewData["Message"] = "You clicked Save!";
+
         }
 
         public async Task<IActionResult> OnPostTempDataSample()
