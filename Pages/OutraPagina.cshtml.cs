@@ -10,6 +10,8 @@ namespace RazorPagesMovie.Pages
 {
     public class OutraPaginaModel : PageModel
     {
+        public Movie Movie { get; set; }
+
         public void OnGet()
         {
             if (TempData.Peek("ObjMovie") != null)
@@ -18,9 +20,7 @@ namespace RazorPagesMovie.Pages
                 //deserializando como objeto
                 var objDeserializado = Newtonsoft.Json.JsonConvert.DeserializeObject(TempData.Peek("ObjMovie").ToString());
                 //deserializando como objeto tipado Movie
-                var objDeserializado1 = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(TempData.Peek("ObjMovie").ToString());
-
-
+                Movie = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(TempData.Peek("ObjMovie").ToString());
                 
             }
         }
