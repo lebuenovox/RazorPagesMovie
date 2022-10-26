@@ -13,11 +13,7 @@ namespace RazorPagesMovie.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-       
-        public Movie ObjMovie { get; set; }
-
+        private readonly ILogger<IndexModel> _logger;              
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -26,10 +22,7 @@ namespace RazorPagesMovie.Pages
 
         public PageResult OnGet()
         {
-            var obj = new Movie { ID = 1234, Genre = "xxxx", Price = 12, Rating = "ab", ReleaseDate = DateTime.Now, Title = "abcdef" };
-            TempData["ObjMovie"] = JsonConvert.SerializeObject(obj);
-            //HttpContext.Session.
-            return Page();
+           return Page();
         }
 
         public void OnPostSave()
@@ -37,9 +30,10 @@ namespace RazorPagesMovie.Pages
             ViewData["Message"] = "You clicked Save!";
         }
 
-        public void Person(int valor)
+        public async Task<IActionResult> OnPostTempDataSample()
         {
-
+            return Page();            
         }
+
     }
 }

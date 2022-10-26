@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RazorPagesMovie.Models;
 
 namespace RazorPagesMovie.Pages
 {
@@ -14,6 +15,13 @@ namespace RazorPagesMovie.Pages
             if (TempData.Peek("ObjMovie") != null)
             {
                 var resultado = TempData.ToList();
+                //deserializando como objeto
+                var objDeserializado = Newtonsoft.Json.JsonConvert.DeserializeObject(TempData.Peek("ObjMovie").ToString());
+                //deserializando como objeto tipado Movie
+                var objDeserializado1 = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(TempData.Peek("ObjMovie").ToString());
+
+
+                
             }
         }
     }
