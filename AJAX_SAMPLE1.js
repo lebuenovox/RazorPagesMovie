@@ -47,3 +47,8 @@ var _getWaiver = function (id) {
                 TFOAlert.showGenericError();
             }
         });
+
+//pegando o form e serializando
+$('form').serialize();
+$( this ).serializeArray() );
+
