@@ -52,3 +52,8 @@ var _getWaiver = function (id) {
 $('form').serialize();
 $( this ).serializeArray() );
 
+//para evitar o erro 400
+headers:
+{
+    "RequestVerificationToken": $('input:hidden[name="__RequestVerificationToken"]').val()
+},
