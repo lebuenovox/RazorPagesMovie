@@ -28,9 +28,11 @@ namespace RazorPagesMovie.Pages
             return Page();
         }
 
-        public PageResult OnPost()
+        [BindProperty]
+        public string Name { get; set; }
+        public IActionResult OnPost()
         {
-            return Page();
+            return Content(Name);
         }
 
         public void OnPostStep1()
