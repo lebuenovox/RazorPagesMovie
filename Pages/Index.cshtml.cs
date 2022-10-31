@@ -13,7 +13,9 @@ namespace RazorPagesMovie.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;              
+        private readonly ILogger<IndexModel> _logger;
+
+        public Steps LocalSteps { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -22,12 +24,27 @@ namespace RazorPagesMovie.Pages
 
         public PageResult OnGet()
         {
-           return Page();
+            LocalSteps = new Steps(false, false,false);
+            return Page();
         }
 
-        public void OnPostSave()
+        public PageResult OnPost()
         {
-            ViewData["Message"] = "You clicked Save!";
+            return Page();
+        }
+
+        public void OnPostStep1()
+        {
+            LocalSteps = new Steps(true, false, false);
+        }
+        public void OnPostStep2()
+        {
+            LocalSteps = new Steps(false, true, false);
+        }
+
+        public void OnPostStep3()
+        {
+            LocalSteps = new Steps(false, false, true);
         }
 
         public IActionResult OnPostTempDataSample()
