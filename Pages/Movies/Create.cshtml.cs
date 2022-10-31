@@ -21,8 +21,7 @@ namespace RazorPagesMovie.Pages.Movies
 
         public IActionResult OnGet()
         {
-            MyProperty = "testando BindProperty";
-            return Page();
+          return Page();
         }
 
         [BindProperty]

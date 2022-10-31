@@ -30,9 +30,9 @@ namespace RazorPagesMovie.Pages
             ViewData["Message"] = "You clicked Save!";
         }
 
-        public async Task<IActionResult> OnPostTempDataSample()
+        public IActionResult OnPostTempDataSample()
         {
-            return Page();            
+            return RedirectToPage("BindSandbox");
         }
 
     }
