@@ -1,0 +1,39 @@
+﻿@page
+@model RazorPagesMovie.Pages.SamplePages.CreateModel
+@{
+    ViewData["Title"] = "Create";   
+}
+
+    <h1>Create</h1>
+
+    <h4>Sample</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form id="frm1" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Sample.Name" class="control-label"></label>
+                    <input asp-for="Sample.Name" class="form-control" />
+                    <span asp-validation-for="Sample.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sample.CreatedTimestamp" class="control-label"></label>
+                    <input asp-for="Sample.CreatedTimestamp" class="form-control" />
+                    <span asp-validation-for="Sample.CreatedTimestamp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Sample.MyValue" class="control-label"></label>
+                    <input asp-for="Sample.MyValue" class="form-control" />
+                    <span asp-validation-for="Sample.MyValue" class="text-danger"></span>
+                </div>
+            <div class="form-group">
+                <input type="submit" value="Salvando form pelo Post" class="btn btn-primary" />                
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>

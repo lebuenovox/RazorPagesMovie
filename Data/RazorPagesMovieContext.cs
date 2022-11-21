@@ -15,5 +15,6 @@ namespace RazorPagesMovie.Data
         }
 
         public DbSet<Movie> Movie { get; set; }
+        public DbSet<Sample> Samples { get; set; }
     }
 }

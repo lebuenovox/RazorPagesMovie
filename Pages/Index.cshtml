@@ -8,18 +8,11 @@
 
 <div class="text-center">
 
-    <a class="nav-link text-dark" asp-page="/TempData_Sample">TempData Sample</a>
-
+    <a class="nav-link text-dark" asp-page="/TempData_Sample">TempData Sample testando 123</a>
     <form method="post">
         <div>
-            <button id="btnStep1" type="submit" asp-page-handler="Step1" class="btn btn-primary">
-                Step1
-            </button>
-            <button id="btnStep1" type="submit" asp-page-handler="Step2" class="btn btn-primary">
-                Step2
-            </button>
-            <button id="btnStep1" type="submit" asp-page-handler="Step3" class="btn btn-primary">
-                Step3
+            <button id="btnStep1" type="submit" asp-page-handler="TempDataSample" class="btn btn-primary">
+                Bind Sandbox
             </button>
         </div>
         <div class="d-flex flex-row bd-highlight mb-3">
@@ -60,6 +53,7 @@
         };
     </script>
 }
+
 
 @if (ViewData["Message"] != null)
 {

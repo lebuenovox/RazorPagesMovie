@@ -49,9 +49,9 @@ namespace RazorPagesMovie.Pages
             LocalSteps = new Steps(false, false, true);
         }
 
-        public async Task<IActionResult> OnPostTempDataSample()
+        public IActionResult OnPostTempDataSample()
         {
-            return Page();
+            return RedirectToPage("BindSandbox");
         }
 
     }
