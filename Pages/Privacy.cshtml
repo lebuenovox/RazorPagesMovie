@@ -1,7 +1,12 @@
-﻿@page
+@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Razor Syntax";
 }
 <h1>@ViewData["Title"]</h1>
 
+<strong>Implicit Razor expressions</strong>
+
+<p>Implicit Razor expressions start with <code>@</code> followed by C# code:</p>
+<p>@DateTime.Now</p>
+<p>@DateTime.IsLeapYear(2016)</p>
